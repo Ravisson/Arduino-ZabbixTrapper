@@ -38,7 +38,7 @@ with type "Numeric".
 
 */
 
-
+#include <Arduino.h>
 #include <SPI.h>
 #include <Ethernet.h>
 #include "config.hpp"
@@ -47,6 +47,8 @@ int counter;
 
 byte mac[] = { MAC1, MAC2, MAC3, MAC4, MAC5, MAC6 };
 IPAddress zabbix(ZABBIX_IP1, ZABBIX_IP2, ZABBIX_IP3, ZABBIX_IP4);
+
+void zabbix_send_trap(void);
 
 void setup() {
     Serial.begin(9600);
